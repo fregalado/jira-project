@@ -1,5 +1,5 @@
 **/node_modules
 
-**/jira_api_dev
+/jira_api_dev
 
 .idea/

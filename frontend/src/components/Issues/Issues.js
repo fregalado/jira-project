@@ -32,7 +32,6 @@ class Issues extends Component{
                         tempArray[index].fields.customfield_10002 += unorderedArray[i].fields.customfield_10002;
                         tempArray[index].fields.timespent += unorderedArray[i].fields.timespent;
                         let initialValue_customfield_10010 = tempArray[index].fields.customfield_10010 == null ? 0 : parseInt(tempArray[index].fields.customfield_10010, 10);
-                        console.log(initialValue_customfield_10010);
                         tempArray[index].fields.customfield_10010 = initialValue_customfield_10010 + (unorderedArray[i].fields.customfield_10010 == null ? 0 : parseInt(unorderedArray[i].fields.customfield_10010, 10));
                         tempArray[index].story += unorderedArray[i].story;
                     }else{
@@ -65,8 +64,7 @@ class Issues extends Component{
                                 stories={issue.story}
                                 storyPoints={issue.fields.customfield_10002}
                                 timespent={issue.fields.timespent}
-                                timeestimate={issue.fields.customfield_10010}
-                            />
+                                timeestimate={issue.fields.customfield_10010}/>
                     )
                 }
             )
@@ -122,7 +120,7 @@ class Issues extends Component{
                                 {
                                     id: 'dificuldade_planeada',
                                     Header: "Planeada",
-                                    accessor: d => {return (1-(d.story/d.fields.customfield_10002)).toFixed(2)}
+                                    accessor: d => (1-(d.story/d.fields.customfield_10002)).toFixed(2)
                                 },
                                 {
                                     Header: "Executada",
@@ -149,9 +147,6 @@ class Issues extends Component{
                     defaultPageSize={10}
                     className="-striped -highlight"
                 />
-                {/*<ul>*/}
-                    {/*{issues}*/}
-                {/*</ul>*/}
             </div>
         )
     }

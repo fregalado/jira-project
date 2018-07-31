@@ -1,6 +1,5 @@
-backend/node_modules
-frontend/node_modules
+**/node_modules
 
-backend/jira_api
+**/jira_api
 
 .idea/
